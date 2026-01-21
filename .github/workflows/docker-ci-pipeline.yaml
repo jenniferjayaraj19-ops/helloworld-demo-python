@@ -18,3 +18,6 @@ jobs:
         with:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
+          
+      - name: push image
+        run: sudo docker push JenniferJ/helloworld-demo-python:v1
