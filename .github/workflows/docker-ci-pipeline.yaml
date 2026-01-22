@@ -8,11 +8,17 @@ jobs:
         uses: actions/checkout@v6
 
       - name: build image
-        run: sudo docker build -t JenniferJ/helloworld-demo-python:v1 .
+        run: sudo docker build -t ${{ vars.DOCKER_USERNAME }}/helloworld-demo-python:v1 .
 
       - name: verify image
         run: sudo docker images
 
+      - name: create container
+        run: docker run --name python-app -itd -p 8080:8080 JenniferJ/helloworld-demo-python:v1 
+
+      - name: view container
+        run: docker ps
+        
       - name: Docker Login
         uses: docker/login-action@v3.6.0
         with:
