@@ -26,4 +26,4 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
           
       - name: push image
-        run: sudo docker push JenniferJ/helloworld-demo-python:v1
+        run: sudo docker push ${{ vars.DOCKER_USERNAME }}/helloworld-demo-python:v1
