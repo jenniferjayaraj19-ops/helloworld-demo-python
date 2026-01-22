@@ -14,7 +14,7 @@ jobs:
         run: sudo docker images
 
       - name: create container
-        run: docker run --name python-app -itd -p 8080:8080 JenniferJ/helloworld-demo-python:v1 
+        run: docker run --name python-app -itd -p 8080:8080 ${{ vars.DOCKER_USERNAME }}/helloworld-demo-python:v1 
 
       - name: view container
         run: docker ps
