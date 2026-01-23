@@ -73,8 +73,8 @@ jobs:
 
       - name: get-status-deployments
         run: | 
-             kubectl get ns,
-             kubectl get deploy, 
+             kubectl get ns
+             kubectl get deploy
              kubectl get service -n pythonapp-ns
 
       - name: Test service URLs
