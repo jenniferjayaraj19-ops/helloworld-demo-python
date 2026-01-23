@@ -59,7 +59,7 @@ jobs:
 
       - name: Apply-yaml-files
         run: |
-          kubectl apply -f kubernetes/*.yaml
+          kubectl apply -f .
           kubectl config set-context --current --namespace=namespace1
           kubectl wait --for=condition=ready pod -l app=hello-world
 
