@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helloworld-deployment
+  namespace: pythonapp-ns
   labels:
-    app: hello-world
-    name: helloworldservice
+    app: hello-world    
 spec:
   replicas: 4
   selector:
@@ -14,6 +14,7 @@ spec:
     metadata:
       labels:
         app: hello-world
+        name: hello-world
     spec:
       containers:
       - name: helloworld
