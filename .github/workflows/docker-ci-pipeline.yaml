@@ -59,7 +59,9 @@ jobs:
 
       - name: Apply-yaml-files
         run: |
-          kubectl apply -f Kubernetes/.
+          kubectl apply -f Kubernetes/namespaces.yaml
+          kubectl apply -f Kubernetes/deployment.yaml
+          kubectl apply -f Kubernetes/service.yaml
           
       - name: set namespace
         run: |
