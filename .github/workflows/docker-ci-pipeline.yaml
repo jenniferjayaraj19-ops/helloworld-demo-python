@@ -60,7 +60,13 @@ jobs:
       - name: Apply-yaml-files
         run: |
           kubectl apply -f Kubernetes/.
-          kubectl config set-context --current --namespace=pythonapp-ns
+          
+      - name: set namespace
+        run: |
+          kubectl config set-context --current --namespace=pythonapp-ns   
+        
+      - name: Wait
+        run: |
           kubectl wait --for=condition=ready pod -l app=hello-world
 
       - name: get-status-deployments
