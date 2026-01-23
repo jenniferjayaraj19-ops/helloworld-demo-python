@@ -80,6 +80,6 @@ jobs:
       - name: Test service URLs
         run: |
           minikube service list
-          minikube service helloworld-app --url
+          minikube service helloworld-app -n pythonapp-ns --url
           echo -n "------------------opening the service------------------"
           curl $(minikube service helloworld-app --url)/version
